@@ -1,178 +1,510 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 760" width="100%" height="100%">
   <defs>
+    <!-- Background Gradients -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0d14"/>
-      <stop offset="100%" stop-color="#06070a"/>
+      <stop offset="0%" stop-color="#080a10"/>
+      <stop offset="50%" stop-color="#050609"/>
+      <stop offset="100%" stop-color="#020305"/>
     </linearGradient>
-    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff2a3a"/>
-      <stop offset="100%" stop-color="#ff5967"/>
-    </linearGradient>
+
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#141824"/>
-      <stop offset="100%" stop-color="#0d101a"/>
+      <stop offset="100%" stop-color="#0c0e17"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
+
+    <linearGradient id="cardGradHighlighted" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c2233"/>
+      <stop offset="100%" stop-color="#0f121d"/>
+    </linearGradient>
+
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2a3a"/>
+      <stop offset="100%" stop-color="#ff6675"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow-crimson" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+
+    <!-- Marker Definitions -->
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#ff2a3a"/>
     </marker>
-    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#a78bfa"/>
     </marker>
   </defs>
 
-  <!-- Background Canvas -->
-  <rect width="960" height="400" rx="16" fill="url(#bgGrad)" stroke="#222838" stroke-width="1.5"/>
+  <!-- Background Base Canvas -->
+  <rect width="1240" height="760" rx="18" fill="url(#bgGrad)" stroke="#1e2436" stroke-width="1.5"/>
 
-  <!-- Grid Overlay lines -->
-  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
-    <line x1="0" y1="80" x2="960" y2="80"/>
-    <line x1="0" y1="160" x2="960" y2="160"/>
-    <line x1="0" y1="240" x2="960" y2="240"/>
-    <line x1="0" y1="320" x2="960" y2="320"/>
-    <line x1="240" y1="0" x2="240" y2="400"/>
-    <line x1="480" y1="0" x2="480" y2="400"/>
-    <line x1="720" y1="0" x2="720" y2="400"/>
+  <!-- Subtle Blueprint Coordinate Grid -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="70" x2="1240" y2="70"/>
+    <line x1="0" y1="130" x2="1240" y2="130"/>
+    <line x1="0" y1="425" x2="1240" y2="425"/>
+    <line x1="0" y1="715" x2="1240" y2="715"/>
+    <line x1="413" y1="0" x2="413" y2="760"/>
+    <line x1="826" y1="0" x2="826" y2="760"/>
   </g>
 
-  <!-- Header / Badge -->
-  <g transform="translate(32, 28)">
-    <rect width="180" height="24" rx="12" fill="rgba(255,42,58,0.12)" stroke="#ff2a3a" stroke-width="1"/>
-    <text x="90" y="16" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">PIPELINE ARCHITECTURE</text>
-    <text x="200" y="17" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Search Ingestion &amp; Knowledge Indexation</text>
+  <!-- ================= TOP HEADER BAR ================= -->
+  <g transform="translate(36, 22)">
+    <!-- Badge -->
+    <rect width="210" height="26" rx="13" fill="rgba(255,42,58,0.12)" stroke="#ff2a3a" stroke-width="1.2"/>
+    <circle cx="16" cy="13" r="4" fill="#ff2a3a"/>
+    <text x="114" y="17.5" fill="#ff5967" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">SEO OPERATING SYSTEM</text>
+
+    <!-- Main Title &amp; Subtitle -->
+    <text x="228" y="19" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="800">
+      Autonomous Closed-Loop Agent Matrix
+    </text>
+    <text x="500" y="19" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">
+      // Continuous Self-Optimizing Search Intelligence
+    </text>
   </g>
 
-  <!-- Node 1: Crawler & Bot Ingestion -->
-  <g transform="translate(40, 85)">
-    <rect width="190" height="265" rx="12" fill="url(#cardGrad)" stroke="#252b3d" stroke-width="1.5"/>
-    <rect x="0" y="0" width="190" height="4" rx="2" fill="#ff2a3a"/>
-    <circle cx="28" cy="30" r="14" fill="rgba(255,42,58,0.15)"/>
-    <text x="28" y="35" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">01</text>
-    <text x="52" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">Crawl Ingestion</text>
-    <text x="52" y="42" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">Googlebot &amp; WRS</text>
+  <!-- ================= 6-STAGE PIPELINE PROGRESSION BAR ================= -->
+  <g transform="translate(36, 62)">
+    <rect width="1168" height="46" rx="8" fill="#0c0e17" stroke="#1f2638" stroke-width="1.2"/>
 
-    <line x1="16" y1="62" x2="174" y2="62" stroke="#1e2433"/>
-
-    <!-- Content List -->
-    <g transform="translate(16, 80)">
-      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">robots.txt / Cluster</text>
-      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">✓ Zero Crawl Traps</text>
+    <!-- Step 1: Inputs -->
+    <g transform="translate(14, 8)">
+      <rect width="170" height="30" rx="6" fill="#131724" stroke="#2a334a"/>
+      <circle cx="16" cy="15" r="9" fill="rgba(255,42,58,0.2)"/>
+      <text x="16" y="19" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" text-anchor="middle">01</text>
+      <text x="34" y="19" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">INPUTS</text>
+      <text x="88" y="19" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9.5">Data Streams</text>
     </g>
+    <path d="M 190 23 L 205 23" stroke="#ff2a3a" stroke-width="1.5" marker-end="url(#arrow-red)"/>
 
-    <g transform="translate(16, 124)">
-      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Sitemap XML Tier</text>
-      <text x="10" y="28" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="9">Dynamic Partitioning</text>
+    <!-- Step 2: Diagnostics -->
+    <g transform="translate(210, 8)">
+      <rect width="170" height="30" rx="6" fill="#131724" stroke="#2a334a"/>
+      <circle cx="16" cy="15" r="9" fill="rgba(245,158,11,0.2)"/>
+      <text x="16" y="19" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" text-anchor="middle">02</text>
+      <text x="34" y="19" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">DIAGNOSTICS</text>
+      <text x="122" y="19" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9.5">Reasoning</text>
     </g>
+    <path d="M 386 23 L 401 23" stroke="#ff2a3a" stroke-width="1.5" marker-end="url(#arrow-red)"/>
 
-    <g transform="translate(16, 168)">
-      <rect width="158" height="34" rx="6" fill="rgba(255,42,58,0.06)" stroke="rgba(255,42,58,0.2)"/>
-      <text x="10" y="16" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">HTTP 200 / Edge 301</text>
-      <text x="10" y="28" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9">Direct Edge Handshake</text>
+    <!-- Step 3: Decisions -->
+    <g transform="translate(406, 8)">
+      <rect width="170" height="30" rx="6" fill="#131724" stroke="#2a334a"/>
+      <circle cx="16" cy="15" r="9" fill="rgba(139,92,246,0.2)"/>
+      <text x="16" y="19" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" text-anchor="middle">03</text>
+      <text x="34" y="19" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">DECISIONS</text>
+      <text x="108" y="19" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9.5">Triage Logic</text>
     </g>
-  </g>
+    <path d="M 582 23 L 597 23" stroke="#ff2a3a" stroke-width="1.5" marker-end="url(#arrow-red)"/>
 
-  <!-- Connection 1 -> 2 -->
-  <path d="M 230 217 L 270 217" fill="none" stroke="#ff2a3a" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
-
-  <!-- Node 2: Edge Delivery & Core Web Vitals -->
-  <g transform="translate(275, 85)">
-    <rect width="190" height="265" rx="12" fill="url(#cardGrad)" stroke="#252b3d" stroke-width="1.5"/>
-    <rect x="0" y="0" width="190" height="4" rx="2" fill="#ff2a3a"/>
-    <circle cx="28" cy="30" r="14" fill="rgba(255,42,58,0.15)"/>
-    <text x="28" y="35" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">02</text>
-    <text x="52" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">Edge &amp; CWV Speed</text>
-    <text x="52" y="42" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">Sub-0.8s Rendering</text>
-
-    <line x1="16" y1="62" x2="174" y2="62" stroke="#1e2433"/>
-
-    <g transform="translate(16, 80)">
-      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">TTFB Delivery</text>
-      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">&lt; 48ms Edge Cache</text>
+    <!-- Step 4: Actions -->
+    <g transform="translate(602, 8)">
+      <rect width="170" height="30" rx="6" fill="#131724" stroke="#2a334a"/>
+      <circle cx="16" cy="15" r="9" fill="rgba(56,189,248,0.2)"/>
+      <text x="16" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" text-anchor="middle">04</text>
+      <text x="34" y="19" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">ACTIONS</text>
+      <text x="96" y="19" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9.5">Edge Deploy</text>
     </g>
+    <path d="M 778 23 L 793 23" stroke="#ff2a3a" stroke-width="1.5" marker-end="url(#arrow-red)"/>
 
-    <g transform="translate(16, 124)">
-      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Largest Paint (LCP)</text>
-      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">0.74s (Optimal Pass)</text>
+    <!-- Step 5: Validation -->
+    <g transform="translate(798, 8)">
+      <rect width="170" height="30" rx="6" fill="#131724" stroke="#2a334a"/>
+      <circle cx="16" cy="15" r="9" fill="rgba(16,185,129,0.2)"/>
+      <text x="16" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" text-anchor="middle">05</text>
+      <text x="34" y="19" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">VALIDATION</text>
+      <text x="114" y="19" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9.5">Bot/CrUX QA</text>
     </g>
+    <path d="M 974 23 L 989 23" stroke="#ff2a3a" stroke-width="1.5" marker-end="url(#arrow-red)"/>
 
-    <g transform="translate(16, 168)">
-      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Interaction (INP)</text>
-      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">28ms Zero Delay</text>
-    </g>
-
-    <g transform="translate(16, 212)">
-      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Layout Shift (CLS)</text>
-      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">0.000 Rock Solid</text>
-    </g>
-  </g>
-
-  <!-- Connection 2 -> 3 -->
-  <path d="M 465 217 L 505 217" fill="none" stroke="#ff2a3a" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
-
-  <!-- Node 3: JavaScript SSR & Hydration -->
-  <g transform="translate(510, 85)">
-    <rect width="190" height="265" rx="12" fill="url(#cardGrad)" stroke="#252b3d" stroke-width="1.5"/>
-    <rect x="0" y="0" width="190" height="4" rx="2" fill="#ff2a3a"/>
-    <circle cx="28" cy="30" r="14" fill="rgba(255,42,58,0.15)"/>
-    <text x="28" y="35" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">03</text>
-    <text x="52" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">Javascript SEO</text>
-    <text x="52" y="42" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">DOM Tree Ingestion</text>
-
-    <line x1="16" y1="62" x2="174" y2="62" stroke="#1e2433"/>
-
-    <g transform="translate(16, 80)">
-      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Server Render (SSR)</text>
-      <text x="10" y="28" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9">Hydration Ready DOM</text>
-    </g>
-
-    <g transform="translate(16, 124)">
-      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Canonical Self-Ref</text>
-      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">Strict Clean URLs</text>
+    <!-- Step 6: Reporting &amp; Closed-Loop Feedback -->
+    <g transform="translate(994, 8)">
+      <rect width="162" height="30" rx="6" fill="rgba(255,42,58,0.1)" stroke="#ff2a3a" stroke-width="1.2"/>
+      <circle cx="16" cy="15" r="9" fill="rgba(255,42,58,0.25)"/>
+      <text x="16" y="19" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" text-anchor="middle">06</text>
+      <text x="32" y="19" fill="#ff6675" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="800">FEEDBACK LOOP</text>
     </g>
   </g>
 
-  <!-- Connection 3 -> 4 -->
-  <path d="M 700 217 L 740 217" fill="none" stroke="#ff2a3a" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
+  <!-- ================= TOP ROW: 3 STRATEGIC AGENTS ================= -->
 
-  <!-- Node 4: Schema.org Knowledge Graph -->
-  <g transform="translate(745, 85)">
-    <rect width="175" height="265" rx="12" fill="url(#cardGrad)" stroke="#252b3d" stroke-width="1.5"/>
-    <rect x="0" y="0" width="175" height="4" rx="2" fill="#ff2a3a"/>
-    <circle cx="28" cy="30" r="14" fill="rgba(255,42,58,0.15)"/>
-    <text x="28" y="35" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">04</text>
-    <text x="52" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">Schema Graph</text>
-    <text x="52" y="42" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">AI &amp; Entity Search</text>
+  <!-- AGENT 01: CONTENT &amp; SEARCH INTENT AGENT (Prioritized &#9312;) -->
+  <g transform="translate(36, 124)">
+    <rect width="374" height="284" rx="12" fill="url(#cardGrad)" stroke="#ff2a3a" stroke-width="1.5"/>
+    <rect x="0" y="0" width="374" height="4" rx="2" fill="url(#crimsonGrad)"/>
 
-    <line x1="16" y1="62" x2="159" y2="62" stroke="#1e2433"/>
+    <!-- Header -->
+    <g transform="translate(16, 14)">
+      <rect width="32" height="32" rx="8" fill="rgba(255,42,58,0.15)" stroke="rgba(255,42,58,0.4)"/>
+      <text x="16" y="21" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" text-anchor="middle">01</text>
+      <text x="42" y="16" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Content &amp; Search Intent Agent</text>
+      <text x="42" y="30" fill="#ff5967" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">SERP Intent Vector &amp; Topical Authority</text>
+    </g>
+    <line x1="16" y1="56" x2="358" y2="56" stroke="#1d2334"/>
 
-    <g transform="translate(14, 80)">
-      <rect width="147" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="8" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">JSON-LD Entity</text>
-      <text x="8" y="28" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="9">@graph Linked Nodes</text>
+    <!-- 6-Stage Micro Steps inside Agent -->
+    <!-- Input -->
+    <g transform="translate(16, 68)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">INPUTS</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">SERP Intent Clustering &#8226; Competitor TF-IDF Entities</text>
     </g>
 
-    <g transform="translate(14, 124)">
-      <rect width="147" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="8" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Rich Snippets</text>
-      <text x="8" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">FAQ &amp; TechArticle</text>
+    <!-- Diagnostics &amp; Decisions -->
+    <g transform="translate(16, 104)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">DIAGNOSE</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">Topical Gap Detection &#8226; Intent Mismatch Triage</text>
     </g>
 
-    <g transform="translate(14, 168)">
-      <rect width="147" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
-      <text x="8" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Google Knowledge</text>
-      <text x="8" y="28" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9">Entity Brand Matrix</text>
+    <!-- Decisions &amp; Actions -->
+    <g transform="translate(16, 140)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">ACTIONS</text>
+      <text x="72" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">Dynamic Brief Gen &#8226; NLP Entity Injection &#8226; Snippet Hooks</text>
     </g>
+
+    <!-- Validation &amp; Reporting -->
+    <g transform="translate(16, 176)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">VALIDATE</text>
+      <text x="72" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9.5">SERP Mock Preview &#8226; 98% Topical Completeness</text>
+    </g>
+
+    <!-- Closed-Loop Metric Badge -->
+    <g transform="translate(16, 214)">
+      <rect width="342" height="56" rx="8" fill="rgba(255,42,58,0.06)" stroke="rgba(255,42,58,0.2)"/>
+      <text x="14" y="22" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">// REPORTING TELEMETRY</text>
+      <text x="14" y="42" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">+42% Intent Precision</text>
+      <text x="210" y="42" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Zero Keyword Cannibalism</text>
+    </g>
+  </g>
+
+  <!-- AGENT 02: INFORMATION ARCHITECTURE &amp; INTERNAL LINKING AGENT (Prioritized &#9313;) -->
+  <g transform="translate(433, 124)">
+    <rect width="374" height="284" rx="12" fill="url(#cardGrad)" stroke="#22293d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="374" height="4" rx="2" fill="url(#cyanGrad)"/>
+
+    <!-- Header -->
+    <g transform="translate(16, 14)">
+      <rect width="32" height="32" rx="8" fill="rgba(56,189,248,0.15)" stroke="rgba(56,189,248,0.4)"/>
+      <text x="16" y="21" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" text-anchor="middle">02</text>
+      <text x="42" y="16" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Info Architecture &amp; Links Agent</text>
+      <text x="42" y="30" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">PageRank Distribution &amp; Silo Topology</text>
+    </g>
+    <line x1="16" y1="56" x2="358" y2="56" stroke="#1d2334"/>
+
+    <!-- Inputs -->
+    <g transform="translate(16, 68)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">INPUTS</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">Full Site Crawl Graph &#8226; URL Depth &#8226; Anchor Text Log</text>
+    </g>
+
+    <!-- Diagnostics -->
+    <g transform="translate(16, 104)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">DIAGNOSE</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">PageRank Leak Detection &#8226; Orphan URLs &#8226; Depth &gt; 3</text>
+    </g>
+
+    <!-- Actions -->
+    <g transform="translate(16, 140)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">ACTIONS</text>
+      <text x="72" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">Hub-Spoke Routing &#8226; In-Body Link Injection &#8226; Breadcrumbs</text>
+    </g>
+
+    <!-- Validation -->
+    <g transform="translate(16, 176)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">VALIDATE</text>
+      <text x="72" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9.5">100% Core Routes &lt; 3 Clicks &#8226; 0 Orphan Pages</text>
+    </g>
+
+    <!-- Reporting -->
+    <g transform="translate(16, 214)">
+      <rect width="342" height="56" rx="8" fill="rgba(56,189,248,0.06)" stroke="rgba(56,189,248,0.2)"/>
+      <text x="14" y="22" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">// REPORTING TELEMETRY</text>
+      <text x="14" y="42" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">+65% Internal Equity</text>
+      <text x="210" y="42" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Flawless Hub Silo Health</text>
+    </g>
+  </g>
+
+  <!-- AGENT 03: AUTHORITY &amp; OFF-PAGE SIGNAL AGENT (Prioritized &#9314;) -->
+  <g transform="translate(830, 124)">
+    <rect width="374" height="284" rx="12" fill="url(#cardGrad)" stroke="#22293d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="374" height="4" rx="2" fill="url(#purpleGrad)"/>
+
+    <!-- Header -->
+    <g transform="translate(16, 14)">
+      <rect width="32" height="32" rx="8" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.4)"/>
+      <text x="16" y="21" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" text-anchor="middle">03</text>
+      <text x="42" y="16" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Authority &amp; Off-Page Agent</text>
+      <text x="42" y="30" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Backlink Trust Flow &amp; Entity Citations</text>
+    </g>
+    <line x1="16" y1="56" x2="358" y2="56" stroke="#1d2334"/>
+
+    <!-- Inputs -->
+    <g transform="translate(16, 68)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">INPUTS</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">Backlink Profile APIs &#8226; Unlinked Brand Mentions</text>
+    </g>
+
+    <!-- Diagnostics -->
+    <g transform="translate(16, 104)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">DIAGNOSE</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">Toxic Link Footprints &#8226; Lost High-DR Backlink Alerts</text>
+    </g>
+
+    <!-- Actions -->
+    <g transform="translate(16, 140)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">ACTIONS</text>
+      <text x="72" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">Disavow File Gen &#8226; Automated Mention Reclamation</text>
+    </g>
+
+    <!-- Validation -->
+    <g transform="translate(16, 176)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">VALIDATE</text>
+      <text x="72" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9.5">Spam Score &lt; 1% &#8226; Live Follow/Nofollow Integrity</text>
+    </g>
+
+    <!-- Reporting -->
+    <g transform="translate(16, 214)">
+      <rect width="342" height="56" rx="8" fill="rgba(139,92,246,0.06)" stroke="rgba(139,92,246,0.2)"/>
+      <text x="14" y="22" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">// REPORTING TELEMETRY</text>
+      <text x="14" y="42" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">+28 Net DR Inflow</text>
+      <text x="210" y="42" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Clean Domain Reputation</text>
+    </g>
+  </g>
+
+  <!-- ================= BOTTOM ROW: 3 TELEMETRY &amp; INFRASTRUCTURE AGENTS ================= -->
+
+  <!-- AGENT 04: SEARCH CONSOLE &amp; MEASUREMENT FEEDBACK LOOP AGENT (Prioritized &#9315;) -->
+  <g transform="translate(36, 432)">
+    <rect width="374" height="284" rx="12" fill="url(#cardGradHighlighted)" stroke="#ff2a3a" stroke-width="1.8" filter="url(#glow-crimson)"/>
+    <rect width="374" height="284" rx="12" fill="url(#cardGrad)" stroke="#ff2a3a" stroke-width="1.8"/>
+    <rect x="0" y="0" width="374" height="4" rx="2" fill="#ff2a3a"/>
+
+    <!-- Header -->
+    <g transform="translate(16, 14)">
+      <rect width="32" height="32" rx="8" fill="rgba(255,42,58,0.25)" stroke="#ff2a3a"/>
+      <text x="16" y="21" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" text-anchor="middle">04</text>
+      <text x="42" y="16" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800">Search Console &amp; Feedback Agent</text>
+      <text x="42" y="30" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">GSC Telemetry &#8226; Closed-Loop Engine</text>
+    </g>
+    <line x1="16" y1="56" x2="358" y2="56" stroke="#252c40"/>
+
+    <!-- Inputs -->
+    <g transform="translate(16, 68)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#252d42"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#1a2030"/>
+      <text x="31" y="19" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">INPUTS</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">GSC API (Clicks/CTR/Pos) &#8226; GA4 Cohorts &#8226; Server Hits</text>
+    </g>
+
+    <!-- Diagnostics -->
+    <g transform="translate(16, 104)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#252d42"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#1a2030"/>
+      <text x="31" y="19" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">DIAGNOSE</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">CTR Anomaly vs Curve &#8226; Query Cannibalization Triage</text>
+    </g>
+
+    <!-- Actions -->
+    <g transform="translate(16, 140)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#252d42"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#1a2030"/>
+      <text x="31" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">ACTIONS</text>
+      <text x="72" y="19" fill="#ff6675" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">Google Indexing API Pings &#8226; Title Tag A/B Split Engine</text>
+    </g>
+
+    <!-- Validation -->
+    <g transform="translate(16, 176)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#252d42"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#1a2030"/>
+      <text x="31" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">VALIDATE</text>
+      <text x="72" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9.5">GSC Green Indexation Status &#8226; Verified CTR Lift</text>
+    </g>
+
+    <!-- Reporting &amp; Feedback -->
+    <g transform="translate(16, 214)">
+      <rect width="342" height="56" rx="8" fill="rgba(255,42,58,0.12)" stroke="#ff2a3a" stroke-width="1.2"/>
+      <text x="14" y="22" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="800">&#8635; CLOSED-LOOP FEEDBACK TO AGENTS 01 &amp; 02</text>
+      <text x="14" y="42" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800">+34% Organic CTR Lift</text>
+      <text x="210" y="42" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">&#10003; Auto-Tuning Intent</text>
+    </g>
+  </g>
+
+  <!-- AGENT 05: CRAWL INGESTION &amp; EDGE DELIVERY AGENT -->
+  <g transform="translate(433, 432)">
+    <rect width="374" height="284" rx="12" fill="url(#cardGrad)" stroke="#22293d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="374" height="4" rx="2" fill="url(#emeraldGrad)"/>
+
+    <!-- Header -->
+    <g transform="translate(16, 14)">
+      <rect width="32" height="32" rx="8" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)"/>
+      <text x="16" y="21" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" text-anchor="middle">05</text>
+      <text x="42" y="16" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Crawl Ingestion &amp; Edge Agent</text>
+      <text x="42" y="30" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Sub-0.8s CWV &amp; Rendering Mechanics</text>
+    </g>
+    <line x1="16" y1="56" x2="358" y2="56" stroke="#1d2334"/>
+
+    <!-- Inputs -->
+    <g transform="translate(16, 68)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">INPUTS</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">Server Access Logs &#8226; Bot Hit Rates &#8226; CWV RUM</text>
+    </g>
+
+    <!-- Diagnostics -->
+    <g transform="translate(16, 104)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">DIAGNOSE</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">Crawl Traps &#8226; TTFB Latency Spikes &#8226; Hydration Drift</text>
+    </g>
+
+    <!-- Actions -->
+    <g transform="translate(16, 140)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">ACTIONS</text>
+      <text x="72" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">Edge 301 Rewrites &#8226; S-MaxAge Headers &#8226; SSR Pre-render</text>
+    </g>
+
+    <!-- Validation -->
+    <g transform="translate(16, 176)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">VALIDATE</text>
+      <text x="72" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9.5">LCP 0.74s &#8226; INP 28ms &#8226; CLS 0.000 (CrUX Pass)</text>
+    </g>
+
+    <!-- Reporting -->
+    <g transform="translate(16, 214)">
+      <rect width="342" height="56" rx="8" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.2)"/>
+      <text x="14" y="22" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">// REPORTING TELEMETRY</text>
+      <text x="14" y="42" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">TTFB 48ms Edge</text>
+      <text x="210" y="42" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Zero Crawl Budget Waste</text>
+    </g>
+  </g>
+
+  <!-- AGENT 06: SCHEMA KNOWLEDGE GRAPH &amp; ENTITY AGENT -->
+  <g transform="translate(830, 432)">
+    <rect width="374" height="284" rx="12" fill="url(#cardGrad)" stroke="#22293d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="374" height="4" rx="2" fill="url(#amberGrad)"/>
+
+    <!-- Header -->
+    <g transform="translate(16, 14)">
+      <rect width="32" height="32" rx="8" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.4)"/>
+      <text x="16" y="21" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" text-anchor="middle">06</text>
+      <text x="42" y="16" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Schema Knowledge Graph Agent</text>
+      <text x="42" y="30" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">JSON-LD Entity Authority &amp; AI Search</text>
+    </g>
+    <line x1="16" y1="56" x2="358" y2="56" stroke="#1d2334"/>
+
+    <!-- Inputs -->
+    <g transform="translate(16, 68)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">INPUTS</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">Page Entities &#8226; Wikidata URIs &#8226; Author Credentials</text>
+    </g>
+
+    <!-- Diagnostics -->
+    <g transform="translate(16, 104)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">DIAGNOSE</text>
+      <text x="72" y="19" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9.5">SDTT Schema Errors &#8226; Broken Node References (@id)</text>
+    </g>
+
+    <!-- Actions -->
+    <g transform="translate(16, 140)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">ACTIONS</text>
+      <text x="72" y="19" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">Multi-Type @graph Linking &#8226; TechArticle / FAQ Markup</text>
+    </g>
+
+    <!-- Validation -->
+    <g transform="translate(16, 176)">
+      <rect width="342" height="30" rx="6" fill="#090b10" stroke="#1b2131"/>
+      <rect x="0" y="0" width="62" height="30" rx="6" fill="#141926"/>
+      <text x="31" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">VALIDATE</text>
+      <text x="72" y="19" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9.5">Google Rich Results 100% Pass &#8226; 0 Linter Errors</text>
+    </g>
+
+    <!-- Reporting -->
+    <g transform="translate(16, 214)">
+      <rect width="342" height="56" rx="8" fill="rgba(245,158,11,0.06)" stroke="rgba(245,158,11,0.2)"/>
+      <text x="14" y="22" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700">// REPORTING TELEMETRY</text>
+      <text x="14" y="42" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">Knowledge Graph Linked</text>
+      <text x="210" y="42" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Rich Snippet Dominance</text>
+    </g>
+  </g>
+
+  <!-- ================= FEEDBACK LOOP CONNECTION LINES ================= -->
+  <!-- Agent 04 -&gt; Agent 01 Loop Back -->
+  <path d="M 223 432 L 223 408" fill="none" stroke="#ff2a3a" stroke-width="2.5" stroke-dasharray="4,4" marker-end="url(#arrow-red)"/>
+
+  <!-- Horizontal Inter-Agent Telemetry Streams -->
+  <path d="M 410 266 L 433 266" fill="none" stroke="#ff2a3a" stroke-width="1.8" stroke-dasharray="3,3" marker-end="url(#arrow-red)"/>
+  <path d="M 807 266 L 830 266" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="3,3" marker-end="url(#arrow-cyan)"/>
+  <path d="M 410 574 L 433 574" fill="none" stroke="#ff2a3a" stroke-width="1.8" stroke-dasharray="3,3" marker-end="url(#arrow-red)"/>
+  <path d="M 807 574 L 830 574" fill="none" stroke="#10b981" stroke-width="1.8" stroke-dasharray="3,3" marker-end="url(#arrow-emerald)"/>
+
+  <!-- Global Footer Indicator -->
+  <g transform="translate(36, 730)">
+    <text x="0" y="10" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="10">
+      SYSTEM PROTOCOL: Self-regulating feedback loops continuously stream SERP &amp; GSC telemetry back into crawl routing, semantic entity generation, and link graph distribution.
+    </text>
   </g>
 </svg>
-
