@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0d14"/>
+      <stop offset="100%" stop-color="#06070a"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141824"/>
+      <stop offset="100%" stop-color="#0d101a"/>
+    </linearGradient>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ff2a3a"/>
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="960" height="400" rx="16" fill="url(#bgGrad2)" stroke="#222838" stroke-width="1.5"/>
+
+  <!-- Grid Overlay lines -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="80" x2="960" y2="80"/>
+    <line x1="0" y1="160" x2="960" y2="160"/>
+    <line x1="0" y1="240" x2="960" y2="240"/>
+    <line x1="0" y1="320" x2="960" y2="320"/>
+    <line x1="240" y1="0" x2="240" y2="400"/>
+    <line x1="480" y1="0" x2="480" y2="400"/>
+    <line x1="720" y1="0" x2="720" y2="400"/>
+  </g>
+
+  <!-- Header / Badge -->
+  <g transform="translate(32, 28)">
+    <rect width="210" height="24" rx="12" fill="rgba(255,42,58,0.12)" stroke="#ff2a3a" stroke-width="1"/>
+    <text x="105" y="16" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">DESIGN &amp; BUILD LIFECYCLE</text>
+    <text x="230" y="17" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Custom Web Design, Builder Configuration &amp; Launch Pipeline</text>
+  </g>
+
+  <!-- Step 1: UX & Wireframing -->
+  <g transform="translate(40, 85)">
+    <rect width="190" height="265" rx="12" fill="url(#cardGrad2)" stroke="#252b3d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="4" rx="2" fill="#ff2a3a"/>
+    <circle cx="28" cy="30" r="14" fill="rgba(255,42,58,0.15)"/>
+    <text x="28" y="35" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">01</text>
+    <text x="52" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">UX &amp; Discovery</text>
+    <text x="52" y="42" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">User Intent Mapping</text>
+
+    <line x1="16" y1="62" x2="174" y2="62" stroke="#1e2433"/>
+
+    <g transform="translate(16, 80)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">User Flow Diagrams</text>
+      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">Frictionless Path to CTA</text>
+    </g>
+
+    <g transform="translate(16, 124)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Information Layout</text>
+      <text x="10" y="28" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="9">Wireframe Wire-mapping</text>
+    </g>
+
+    <g transform="translate(16, 168)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Client Triage Needs</text>
+      <text x="10" y="28" fill="#ff5967" font-family="'JetBrains Mono', monospace" font-size="9">Interactive Questionnaires</text>
+    </g>
+
+    <g transform="translate(16, 212)">
+      <rect width="158" height="34" rx="6" fill="rgba(255,42,58,0.06)" stroke="rgba(255,42,58,0.2)"/>
+      <text x="10" y="16" fill="#ff4d5a" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">WCAG 2.1 AA Spec</text>
+      <text x="10" y="28" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="9">Accessible Hierarchy</text>
+    </g>
+  </g>
+
+  <!-- Connection 1 -> 2 -->
+  <path d="M 230 217 L 270 217" fill="none" stroke="#ff2a3a" stroke-width="2" marker-end="url(#arrow-red)" stroke-dasharray="4,3"/>
+
+  <!-- Step 2: Custom UI & Design Systems -->
+  <g transform="translate(275, 85)">
+    <rect width="190" height="265" rx="12" fill="url(#cardGrad2)" stroke="#252b3d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="4" rx="2" fill="#ff2a3a"/>
+    <circle cx="28" cy="30" r="14" fill="rgba(255,42,58,0.15)"/>
+    <text x="28" y="35" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">02</text>
+    <text x="52" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">Custom UI Design</text>
+    <text x="52" y="42" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">Visual Identity &amp; Grid</text>
+
+    <line x1="16" y1="62" x2="174" y2="62" stroke="#1e2433"/>
+
+    <g transform="translate(16, 80)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Color &amp; Typography</text>
+      <text x="10" y="28" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="9">Calm, Authoritative Hues</text>
+    </g>
+
+    <g transform="translate(16, 124)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Design System Tokens</text>
+      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">Scalable CSS Variables</text>
+    </g>
+
+    <g transform="translate(16, 168)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Micro-Interactions</text>
+      <text x="10" y="28" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9">60fps Smooth Transitions</text>
+    </g>
+
+    <g transform="translate(16, 212)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Dark / Light Themes</text>
+      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">Automatic OS Preference</text>
+    </g>
+  </g>
+
+  <!-- Connection 2 -> 3 -->
+  <path d="M 465 217 L 505 217" fill="none" stroke="#ff2a3a" stroke-width="2" marker-end="url(#arrow-red)" stroke-dasharray="4,3"/>
+
+  <!-- Step 3: Builder & CMS Configuration -->
+  <g transform="translate(510, 85)">
+    <rect width="190" height="265" rx="12" fill="url(#cardGrad2)" stroke="#252b3d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="4" rx="2" fill="#ff2a3a"/>
+    <circle cx="28" cy="30" r="14" fill="rgba(255,42,58,0.15)"/>
+    <text x="28" y="35" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">03</text>
+    <text x="52" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">Builder &amp; Config</text>
+    <text x="52" y="42" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">Modular CMS / Jamstack</text>
+
+    <line x1="16" y1="62" x2="174" y2="62" stroke="#1e2433"/>
+
+    <g transform="translate(16, 80)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Modular Components</text>
+      <text x="10" y="28" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9">Reusable Custom Blocks</text>
+    </g>
+
+    <g transform="translate(16, 124)">
+      <rect width="158" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="10" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Booking &amp; Form Logic</text>
+      <text x="10" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">Dynamic Triage Filters</text>
+    </g>
+  </g>
+
+  <!-- Connection 3 -> 4 -->
+  <path d="M 700 217 L 740 217" fill="none" stroke="#ff2a3a" stroke-width="2" marker-end="url(#arrow-red)" stroke-dasharray="4,3"/>
+
+  <!-- Step 4: Responsive & Launch -->
+  <g transform="translate(745, 85)">
+    <rect width="175" height="265" rx="12" fill="url(#cardGrad2)" stroke="#252b3d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="175" height="4" rx="2" fill="#ff2a3a"/>
+    <circle cx="28" cy="30" r="14" fill="rgba(255,42,58,0.15)"/>
+    <text x="28" y="35" fill="#ff2a3a" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">04</text>
+    <text x="52" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">Deploy &amp; Launch</text>
+    <text x="52" y="42" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">High-Conversion Live</text>
+
+    <line x1="16" y1="62" x2="159" y2="62" stroke="#1e2433"/>
+
+    <g transform="translate(14, 80)">
+      <rect width="147" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="8" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Device Viewports</text>
+      <text x="8" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">Mobile, Tablet, Desktop</text>
+    </g>
+
+    <g transform="translate(14, 124)">
+      <rect width="147" height="34" rx="6" fill="#090b10" stroke="#1a1e2b"/>
+      <text x="8" y="16" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">Asset Compression</text>
+      <text x="8" y="28" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">Next-Gen AVIF / WebP</text>
+    </g>
+
+    <g transform="translate(14, 168)">
+      <rect width="147" height="34" rx="6" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.2)"/>
+      <text x="8" y="16" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">Client Satisfaction</text>
+      <text x="8" y="28" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9">★★★★★ 5.0 Rating</text>
+    </g>
+  </g>
+</svg>
+
